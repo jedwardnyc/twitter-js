@@ -1,5 +1,7 @@
 const express = require( 'express' );
 const nunjucks = require( 'nunjucks' );
+const morgan = require( 'morgan' );
+const tweetBank = require('./tweetBank');
 const app = express();
 
 app.set('view engine', 'html');
@@ -12,7 +14,8 @@ const inputs = {
     { name: 'Gandalf'},
     { name: 'Frodo' },
     { name: 'Hermoine'}
-    ]
+    ],
+  message: "Lord of the rings was the greatest movie of all time!"
 };
 
 const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
@@ -34,7 +37,7 @@ app.use('/special/', (req,res,next)=>{
 })
 
 app.get('/', (req,res)=>{
-  res.render('index', {title: inputs.title, people:inputs.people})
+  res.render('index', {title: inputs.title, people:inputs.people, message:inputs.message})
 });
 
 app.get('/news', (req,res)=>{
