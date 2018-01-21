@@ -1,5 +1,27 @@
 const express = require( 'express' );
+const nunjucks = require( 'nunjucks' );
 const app = express();
+
+app.set('view engine', 'html');
+app.engine('html', nunjucks.render);
+nunjucks.configure('views', {noCache:true});
+
+const inputs = {
+  title: "An Example",
+  people: [
+    { name: 'Gandalf'},
+    { name: 'Frodo' },
+    { name: 'Hermoine'}
+    ]
+};
+
+const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
+
+nunjucks.render('index.html', inputs, function(err,output) {
+    // console.log(output);
+});
+
+nunjucks.configure('view', {noCache:true});
 
 app.use((req,res,next)=>{
   console.log('This Request = ', req.method);
@@ -12,7 +34,7 @@ app.use('/special/', (req,res,next)=>{
 })
 
 app.get('/', (req,res)=>{
-  res.send('Hello there!');
+  res.render('index', {title: inputs.title, people:inputs.people})
 });
 
 app.get('/news', (req,res)=>{
