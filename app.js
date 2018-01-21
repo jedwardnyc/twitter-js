@@ -18,7 +18,7 @@ const inputs = {
 const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
 
 nunjucks.render('index.html', inputs, function(err,output) {
-    // console.log(output);
+    console.log(output);
 });
 
 nunjucks.configure('view', {noCache:true});
