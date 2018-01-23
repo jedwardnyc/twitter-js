@@ -14,7 +14,7 @@ function find (properties) {
   return _.cloneDeep(_.filter(data,properties))
 }
 
-module.exports = { add: add, list: list, find: find }
+module.exports = { add, list, find }
 
 const randArrayEl = function(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
@@ -35,4 +35,4 @@ for (let i=0; i<10; i++){
   module.exports.add( getFakeName(), getFakeTweet());
 }
 
-console.log(data)
+
