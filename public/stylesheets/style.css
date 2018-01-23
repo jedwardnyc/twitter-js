@@ -50,16 +50,12 @@ code {
   height: 48px;
   width: 48px;
   content:url("http://lorempixel.com/48/48");
+  
 }
 .content {
   margin-left: 60px;
 }
 .content .by {
   font-weight: bold;
-}
-
-li {
-  list-style-image: url('https://s.ytimg.com/yts/img/avatar_48-vfllY0UTT.png');
-  vertical-align: top;
 }
 

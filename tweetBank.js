@@ -3,7 +3,7 @@ const _ = require('lodash');
 var data = [];
 
 function add (name, content){
-  data.push({ name: name, content: content });
+  data.push({ name: name, content: content, id: data.length });
 }
 
 function list (){
@@ -30,6 +30,10 @@ const getFakeTweet = function() {
   const awesome_adj = ['awesome', 'breathtaking', 'amazing', 'funny', 'sweet', 'cool', 'wonderful', 'mindblowing', 'impressive'];
   return "Fullstack Academy is " + randArrayEl(awesome_adj) + "! The instructors are just so " + randArrayEl(awesome_adj) + ". #fullstacklove #codedreams";
 };
+
+const getTweetId = function(){
+  return Math.floor(Math.random() * 1000);
+}
 
 for (let i=0; i<10; i++){
   module.exports.add( getFakeName(), getFakeTweet());
