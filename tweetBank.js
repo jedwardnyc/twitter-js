@@ -35,10 +35,3 @@ for (let i=0; i<10; i++){
   module.exports.add( getFakeName(), getFakeTweet());
 }
 
-<<<<<<< HEAD
-
-=======
-console.log(data)
-
-console.log(list());
->>>>>>> fb86c78756be502142d1717e7bb07be412f440d9
